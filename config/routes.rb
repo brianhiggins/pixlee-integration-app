@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'pixlee/start'
+  root 'pixlee#start'
 
-  get 'pixlee/index'
+  get 'index' => 'pixlee/index'
 
-  get 'pixlee/createToken'
+  post 'makeNewToken' => 'pixlee/makeNewToken'
 
-  get 'pixlee/getToken'
+  get 'getToken' => 'pixlee/getToken'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
