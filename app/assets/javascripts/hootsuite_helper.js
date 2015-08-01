@@ -29,15 +29,15 @@ function authenticate(pic_url, time) {
 		console.log("failure on first");
 	});
 	
-	$.ajax({
-		url: "getAuth",
-		type: "GET",
-		data: {},
-		dataType: "json",
-	}).success(function(resp) {
-		console.log(resp + " end. ");
-		 auth_token = resp;
-	});
+	// $.ajax({
+	// 	url: "getAuth",
+	// 	type: "GET",
+	// 	data: {},
+	// 	dataType: "json",
+	// }).success(function(resp) {
+	// 	console.log(resp + " end. ");
+	// 	 auth_token = resp;
+	// });
 
 	return auth_token;
 }
