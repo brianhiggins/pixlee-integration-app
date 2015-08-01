@@ -23,19 +23,7 @@ function authenticate(pic_url, time) {
 			timeStamp: time
 		},
 		dataType: "json",
-	}).success(function(resp) {
-		console.log(resp + " end. ");
-	});
-	
-	$.ajax({
-		url: "getAuth",
-		type: "GET",
-		data: {},
-		dataType: "json",
-	}).success(function(resp) {
-		console.log(resp + " end. ");
-		 auth_token = resp;
 	});
 
-	return auth_token;
+	return gon.token;
 }
