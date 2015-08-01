@@ -35,8 +35,6 @@ function authenticate(pic_url, time) {
 	}).success(function(resp) {
 		console.log(resp + " end. ");
 		 auth_token = resp;
-	}).done(function() {
-		console.log("   all done   ");
 	});
 
 	return auth_token;
