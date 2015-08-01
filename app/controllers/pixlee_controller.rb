@@ -10,7 +10,7 @@ class PixleeController < ApplicationController
   end
 
   def createAuth
-  	@auth_token = "big butts" #(@user_id + params[:data][:timeStamp] + params[:data][:url] + "SHARED_SECRET")
+  	@auth_token = (@user_id + params[:timeStamp] + params[:url] + "SHARED_SECRET")
   	@auth_token = Digest::SHA2.new(512).hexdigest(@auth_token)
   end
 
