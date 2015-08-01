@@ -9,8 +9,14 @@ class PixleeController < ApplicationController
   end
 
   def createAuth
+  	@auth_token = (@user_id + params[:data][:timeStamp] + params[:data][:url] + "SHARED_SECRET")
+  	@auth_token = Digest::SHA2.new(512).hexdigest(@auth_token)
   end
 
   def getAuth
+  	respond_to |format|
+		format.html
+		format.json {render json: @auth_token}
+ 	end
   end
 end
