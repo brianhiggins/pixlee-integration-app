@@ -14,9 +14,6 @@ class PixleeController < ApplicationController
   end
 
   def getAuth
-  	 	# respond_to |format|
-		# format.html
-		# format.json {render json: @auth_token}
- 	# end
+  	return "show me"
   end
 end
