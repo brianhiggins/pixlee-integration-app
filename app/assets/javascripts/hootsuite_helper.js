@@ -25,6 +25,8 @@ function authenticate(pic_url, time) {
 		dataType: "json",
 	}).success(function(resp) {
 		console.log(resp + " end. ");
+	}).fail(function() {
+		console.log("failure on first");
 	});
 	
 	$.ajax({
