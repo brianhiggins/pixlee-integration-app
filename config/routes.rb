@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get 'index' => 'pixlee/index'
 
-  post 'makeNew' => 'pixlee/makeNew'
+  post 'makeAuth' => 'pixlee/makeAuth'
 
-  get 'getNew' => 'pixlee/getNew'
+  get 'getAuth' => 'pixlee/getAuth'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
