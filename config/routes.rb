@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'pixlee#start'
 
-  get 'index' => 'pixlee/index'
+  get 'index' => 'pixlee#index'
 
-  post 'createAuth' => 'pixlee/createAuth'
+  post 'createAuth' => 'pixlee#createAuth'
 
-  get 'getAuth' => 'pixlee/getAuth'
+  get 'getAuth' => 'pixlee#getAuth'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
