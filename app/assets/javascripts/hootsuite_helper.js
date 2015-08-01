@@ -15,7 +15,7 @@ function attach(pic_url, pic_extension, pic_name) {
 function authenticate(pic_url, time) {
 	var auth_token = null;
 
-		$.ajax({
+	$.ajax({
 		url: "createAuth",
 		type: "POST", 
 		data: {
@@ -25,5 +25,5 @@ function authenticate(pic_url, time) {
 		dataType: "json",
 	});
 
-	return gon.token;
+//	return gon.token;
 }

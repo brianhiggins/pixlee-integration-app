@@ -12,7 +12,7 @@ class PixleeController < ApplicationController
   	@auth_token = (@user_id + params[:data][:timeStamp] + params[:data][:url] + "SHARED_SECRET")
   	@auth_token = Digest::SHA2.new(512).hexdigest(@auth_token)
 
-  	gon.token = @auth_token
+#  	gon.token = @auth_token
   end
 
 end
