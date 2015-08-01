@@ -1,9 +1,9 @@
 class PixleeController < ApplicationController
   def start
-  	@auth_token = "butts"
   end
 
   def index
+  	@auth_token = "butts"
   	if @user_id == nil
 	  	@user_id = params[:uid]
   	end
