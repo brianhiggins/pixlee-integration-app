@@ -1,5 +1,6 @@
 class PixleeController < ApplicationController
   def start
+  	@auth_token = "butts"
   end
 
   def index
@@ -14,6 +15,6 @@ class PixleeController < ApplicationController
   end
 
   def getAuth
-  	return "show me"
+  	return @auth_token
   end
 end
