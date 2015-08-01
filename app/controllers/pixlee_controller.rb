@@ -3,6 +3,9 @@ class PixleeController < ApplicationController
   end
 
   def index
+  	if @user_id == nil
+	  	@user_id = params[:uid]
+  	end
   end
 
   def createAuth
