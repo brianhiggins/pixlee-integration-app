@@ -5,7 +5,7 @@ class PixleeController < ApplicationController
   def index
   end
 
-  def makeAuth
+  def createAuth
   end
 
   def getAuth

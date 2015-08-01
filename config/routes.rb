@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'index' => 'pixlee/index'
 
-  post 'makeAuth' => 'pixlee/makeAuth'
+  post 'createAuth' => 'pixlee/createAuth'
 
   get 'getAuth' => 'pixlee/getAuth'
 
