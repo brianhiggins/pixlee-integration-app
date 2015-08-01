@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pixlee#start'
 
+  post '/' => 'pixlee#index'
+
   get 'index' => 'pixlee#index'
 
   post 'createAuth' => 'pixlee#createAuth'
