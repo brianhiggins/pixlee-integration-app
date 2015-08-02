@@ -1,3 +1,5 @@
+require 'digest/SHA1'
+
 class PixleeController < ApplicationController
   def start
   end
@@ -10,9 +12,9 @@ class PixleeController < ApplicationController
   end
 
   def createAuth
-  	$auth_token = ($user_id + params[:data][:timeStamp] + params[:data][:url] + "pixlee")
+  	$auth_token = ($user_id + params[:timeStamp] + params[:url] + "pixlee")
   	p $auth_token
-  	$auth_token = Digest::SHA2.new(512).digest($auth_token)
+  	$auth_token = Digest::SHA1.new(512).digest($auth_token)
   	p $auth_token
 
   end
