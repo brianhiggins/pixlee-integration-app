@@ -1,5 +1,17 @@
 function attach(pic_url, pic_extension, pic_name) {
 	var time = event.timeStamp;
+
+
+	$.ajax({
+		url: "createAuth",
+		type: "POST", 
+		data: {
+			url: pic_url,
+			timeStamp: time
+		},
+		dataType: "json",
+	});
+
 	var auth_token = authenticate(pic_url, time);
 
 	hsp.attachFileToMessage ({ 
@@ -14,16 +26,6 @@ function attach(pic_url, pic_extension, pic_name) {
 
 function authenticate(pic_url, time) {
 	var auth_token = null;
-
-	$.ajax({
-		url: "createAuth",
-		type: "POST", 
-		data: {
-			url: pic_url,
-			timeStamp: time
-		},
-		dataType: "json",
-	});
 	
 	$.ajax({
 		url: "getAuth",
@@ -34,6 +36,7 @@ function authenticate(pic_url, time) {
 		console.log(resp + " end. ");
 		 auth_token = resp;
 	});
+	
 	window.alert(auth_token);
 	return auth_token;
 }
