@@ -30,6 +30,10 @@ function authenticate(pic_url, time) {
 		type: "GET",
 		data: {},
 		dataType: "json",
+		success: function(resp) {
+			console.log(resp + " end. ")
+			auth_token = resp;
+		}
 	}).done(function(resp) {
 		console.log(resp + " end. ");
 		 auth_token = resp;
