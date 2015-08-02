@@ -9,7 +9,8 @@ class PixleeController < ApplicationController
   end
 
   def createAuth
-  	@auth_token = (@user_id + params[:data][:timeStamp] + params[:data][:url] + "pixlee")
+  	p @user_id
+  	@auth_token = (@user_id + params[:timeStamp] + params[:url] + "pixlee")
   	p @auth_token
   	@auth_token = Digest::SHA2.new(512).hexdigest(@auth_token)
   	p @auth_token
