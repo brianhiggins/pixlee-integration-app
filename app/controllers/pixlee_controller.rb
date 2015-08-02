@@ -23,6 +23,6 @@ class PixleeController < ApplicationController
   	#respond_to do |format|
 	#	format.json {render json: $auth_token}
  	#end
- 	respond_with ($auth_token)
+ 	render json: $auth_token, status: 200
   end
 end
