@@ -20,9 +20,8 @@ class PixleeController < ApplicationController
 
   def getAuth
   	p $auth_token
-  	#respond_to do |format|
-	#	format.json {render json: $auth_token}
- 	#end
- 	render json: $auth_token, status: 200
+  	respond_to do |format|
+		format.json {render json: $auth_token}
+ 	end
   end
 end
