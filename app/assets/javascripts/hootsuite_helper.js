@@ -15,7 +15,7 @@ function attach(pic_url, pic_extension, pic_name) {
 function authenticate(pic_url, time) {
 	var auth_token = null;
 
-		$.ajax({
+	$.ajax({
 		url: "createAuth",
 		type: "POST", 
 		data: {
@@ -23,21 +23,17 @@ function authenticate(pic_url, time) {
 			timeStamp: time
 		},
 		dataType: "json",
-	}).success(function(resp) {
-		console.log(resp + " end. ");
-	}).fail(function() {
-		console.log("failure on first");
 	});
 	
-	// $.ajax({
-	// 	url: "getAuth",
-	// 	type: "GET",
-	// 	data: {},
-	// 	dataType: "json",
-	// }).success(function(resp) {
-	// 	console.log(resp + " end. ");
-	// 	 auth_token = resp;
-	// });
-
+	$.ajax({
+		url: "getAuth",
+		type: "GET",
+		data: {},
+		dataType: "json",
+	}).success(function(resp) {
+		console.log(resp + " end. ");
+		 auth_token = resp;
+	});
+	window.alert(auth_token);
 	return auth_token;
 }
