@@ -10,16 +10,15 @@ class PixleeController < ApplicationController
   end
 
   def createAuth
-  	@auth_token = ($user_id + params[:timeStamp] + params[:url] + "pixlee")
-  	@auth_token = Digest::SHA2.new(512).hexdigest(@auth_token)
-  	p @auth_token
+  	$auth_token = ($user_id + params[:timeStamp] + params[:url] + "pixlee")
+  	$auth_token = Digest::SHA2.new(512).hexdigest($auth_token)
+  	p $auth_token
 
   end
 
   def getAuth
-  	respond_to |format|
-		format.html
-		format.json {render json: @auth_token}
+  	respond_to do |format|
+		format.json {render json: $auth_token}
  	end
   end
 end
