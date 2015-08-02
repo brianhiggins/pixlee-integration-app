@@ -22,7 +22,7 @@ class PixleeController < ApplicationController
   	p $auth_token
   	respond_to do |format|
   		format.html 
-		format.json {render json: => $auth_token}
+		format.json {render json: $auth_token}
  	end
   end
 end
