@@ -1,7 +1,9 @@
 function attach(pic_url, pic_extension, pic_name) {
 	var time = event.timeStamp;
+	createToken(pic_url, time);
 
-	var auth_token = authenticate(pic_url, time);
+	var auth_token = getToken();
+
 	hsp.attachFileToMessage ({ 
 		url: pic_url, 
 		name: pic_name, 
@@ -12,7 +14,7 @@ function attach(pic_url, pic_extension, pic_name) {
 
 }
 
-function authenticate(pic_url, time) {
+function createToken(pic_url, time) {
 	var auth_token = null;
 	
 		$.ajax({
@@ -23,19 +25,22 @@ function authenticate(pic_url, time) {
 			timeStamp: time
 		},
 		dataType: "script",
-	}).done(
-		$.ajax({
-			url: "getAuth",
-			type: "GET",
-			data: {},
-			dataType: "script",
-		}).always(function(resp) {
-			auth_token = resp.responseText;
-			console.log("auth_token: " + auth_token);
-			console.log("resp.responseText: " + resp.responseText);
+	});
+}
 
-		})
-	);
+function getToken() {
+	$.ajax({
+		url: "getAuth",
+		type: "GET",
+		data: {},
+		dataType: "script",
+	}).always(function(resp) {
+		auth_token = resp.responseText;
+		console.log("auth_token: " + auth_token);
+		console.log("resp.responseText: " + resp.responseText);
+
+	});
+
 	console.log("outside ajax: " + auth_token);
 	return auth_token;
 }
