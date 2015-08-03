@@ -23,7 +23,7 @@ function createToken(pic_url, time) {
 			url: pic_url,
 			timeStamp: time
 		},
-		dataType: "json",
+		dataType: "script",
 	});
 }
 
@@ -32,7 +32,7 @@ function getToken(pic_url, pic_name, pic_extension, time) {
 		url: "getAuth",
 		type: "GET",
 		data: {},
-		dataType: "json",
+		dataType: "script",
 	})
 	.always(function(resp) {
 
