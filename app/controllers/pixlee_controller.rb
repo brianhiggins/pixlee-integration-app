@@ -2,10 +2,13 @@ require 'digest/sha1'
 
 class PixleeController < ApplicationController
   def start
+  	p 'sart'
   	session[:test] = "test"
+  	p session[:test]
   end
 
   def index
+  	p 'index'
   	p session[:test]
   	session[:user_id] = params[:uid]
   	# p session[:user_id]
