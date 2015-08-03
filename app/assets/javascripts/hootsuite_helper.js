@@ -35,11 +35,9 @@ function getToken() {
 		type: "GET",
 		data: {},
 		dataType: "script",
+	})
+	.always(function(resp) {
+		console.log("auth_token: " + auth_token);
+		console.log("resp.responseText: " + resp.responseText);
 	});
-	// .always(function(resp) {
-	// 	auth_token = resp.responseText;
-	// 	console.log("auth_token: " + auth_token);
-	// 	console.log("resp.responseText: " + resp.responseText);
-
-	// });
 }
