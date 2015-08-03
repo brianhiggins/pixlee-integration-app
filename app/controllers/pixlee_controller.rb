@@ -2,18 +2,14 @@ require 'digest/sha1'
 
 class PixleeController < ApplicationController
   def start
-  	session[:uid] = nil
   end
 
   def index
-  	session[:uid] = params[:uid]
-  	p session[:uid]
+  	$user_id = params[:uid]
   end
 
   def createAuth
-  	p session[:uid]
-  	$auth_token = (session[:uid] + params[:timeStamp] + params[:url] + "pixlee")
-  	p $auth_token
+  	$auth_token = ($user_id + params[:timeStamp] + params[:url] + "pixlee")
   	$auth_token = Digest::SHA1.hexdigest($auth_token)
   	p $auth_token
 
