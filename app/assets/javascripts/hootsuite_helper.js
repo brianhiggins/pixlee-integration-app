@@ -31,8 +31,8 @@ function authenticate(pic_url, time) {
 			data: {},
 			dataType: "string",
 		}).always(function(resp) {
-			console.log(JSON.stringify(resp) + " ---- " + resp.responseText() + " ---- " + resp.responseText + " ---- ");
-			auth_token = resp.responseText();
+			console.log(JSON.stringify(resp) + " ---- " + resp.toSource + " ---- " + resp.responseText + " ---- ");
+			auth_token = resp.toSource;
 		})
 	);
 	return auth_token;
