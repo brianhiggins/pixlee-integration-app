@@ -7,6 +7,7 @@ class PixleeController < ApplicationController
   def index
   	$user_id = params[:uid]
   	session[:uid] = $user_id
+  	p session[:uid]
   end
 
   def createAuth
