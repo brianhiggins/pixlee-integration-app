@@ -22,15 +22,3 @@ function attach(pic_url, pic_name, pic_extension) {
 		console.log("resp.responseText: " + resp.responseText);
 	});
 }
-
-function createToken(pic_url, time) {
-	$.ajax({
-		url: "createAuth",
-		type: "POST", 
-		data: {
-			url: pic_url,
-			timeStamp: time
-		},
-		dataType: "script",
-	});
-}
