@@ -1,7 +1,7 @@
 function attach(pic_url, pic_name, pic_extension) {
 	var time = event.timeStamp;
 
-	createToken(pic_url, time);
+	//createToken(pic_url, time);
 	// var auth_token = 
 	getToken(pic_url, pic_name, pic_extension, time);
 	// window.alert("raw: " + auth_token + " stringify: " + auth_token.stringify);
@@ -27,11 +27,13 @@ function createToken(pic_url, time) {
 	});
 }
 
-function getToken(pic_url, pic_name, pic_extension, time) {
+function useToken(pic_url, pic_name, pic_extension, time) {
 	$.ajax({
 		url: "getAuth",
 		type: "GET",
-		data: {},
+		data: {
+			url: pic_url,
+			timeStamp: time},
 		dataType: "script",
 	})
 	.always(function(resp) {
