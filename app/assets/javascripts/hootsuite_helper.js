@@ -35,7 +35,5 @@ function authenticate(pic_url, time) {
 			 auth_token = resp;
 		})
 	);
-
-	window.alert(auth_token);
 	return auth_token;
 }
