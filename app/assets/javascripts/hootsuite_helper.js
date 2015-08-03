@@ -29,7 +29,7 @@ function authenticate(pic_url, time) {
 			url: "getAuth",
 			type: "GET",
 			data: {},
-			dataType: "script",
+			dataType: "script"
 		}).always(function(resp) {
 			console.log(JSON.stringify(resp) + " ---- " + resp.responseText + " ---- " resp);
 			auth_token = resp;
