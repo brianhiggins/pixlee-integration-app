@@ -31,7 +31,7 @@ function authenticate(pic_url, time) {
 			data: {},
 			dataType: "string",
 		}).always(function(resp) {
-			console.log(resp[0] + " end. ");
+			console.log(resp + " end. ");
 			 window.alert(resp);
 		})
 	);
