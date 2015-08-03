@@ -28,7 +28,7 @@ function createToken(pic_url, time) {
 }
 
 function getToken(pic_url, pic_name, pic_extension, time) {
-	return $.ajax({
+	$.ajax({
 		url: "getAuth",
 		type: "GET",
 		data: {},
