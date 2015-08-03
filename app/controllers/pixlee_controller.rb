@@ -6,12 +6,9 @@ class PixleeController < ApplicationController
 
   def index
   	$user_id = params[:uid]
-  	session[:uid] = $user_id
-  	p session[:uid]
   end
 
   def createAuth
-  	p session[:uid]
   	$auth_token = ($user_id + params[:timeStamp] + params[:url] + "pixlee")
   	$auth_token = Digest::SHA1.hexdigest($auth_token)
   	p $auth_token

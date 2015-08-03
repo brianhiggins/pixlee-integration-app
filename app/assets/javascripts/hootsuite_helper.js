@@ -8,7 +8,7 @@ function attach(pic_url, pic_extension, pic_name) {
 		name: pic_name, 
 		extension: pic_extension, 
 		timestamp: time, 
-		token: auth_token
+		token: '048c16bed04be84d7131664dffa5c23af60ceb78' //auth_token
 	});
 
 }
