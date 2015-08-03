@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file.
 
 #Rails.application.config.session_store :cookie_store, key: '_pixlee-integration-app_session'
-Rails.Application.config.session_store :cookie_store, {
+Rails.application.config.session_store :cookie_store, {
   :key =>           '_pixlee-integration-app_session',
   :path =>          '/',
   :domain =>        nil,   # accepted domain, for example '.example.com'  
