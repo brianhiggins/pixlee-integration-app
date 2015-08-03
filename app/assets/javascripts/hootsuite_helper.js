@@ -3,7 +3,7 @@ function attach(pic_url, pic_name, pic_extension) {
 
 	createToken(pic_url, time);
 	var auth_token = getToken();
-	window.alert(auth_token.stringify);
+	window.alert("raw: " + authToken + "stringify: " + auth_token.stringify);
 	hsp.attachFileToMessage ({ 
 		url: pic_url, 
 		name: pic_name, 
@@ -37,7 +37,6 @@ function getToken() {
 		dataType: "script",
 	})
 	.always(function(resp) {
-		console.log("auth_token: " + auth_token);
 		console.log("resp.responseText: " + resp.responseText);
 	});
 }
