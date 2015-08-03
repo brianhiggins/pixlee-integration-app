@@ -31,9 +31,11 @@ function authenticate(pic_url, time) {
 			data: {},
 			dataType: "script",
 		}).always(function(resp) {
-			console.log(JSON.stringify(resp) + " ---- " + resp.responseText + " ---- " + resp);
+			console.log(resp.responseText);
 			auth_token = resp.responseText;
+			console.log(auth_token);
 		})
 	);
+	console.log(auth_token);
 	return auth_token;
 }
