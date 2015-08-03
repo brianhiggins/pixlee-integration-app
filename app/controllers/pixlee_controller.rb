@@ -6,6 +6,7 @@ class PixleeController < ApplicationController
 
   def index
   	p session[:uid]
+  	p getID()
   end
 
   def createAuth
