@@ -2,7 +2,6 @@ function attach(pic_url, pic_extension, pic_name) {
 	var time = event.timeStamp;
 
 	var auth_token = authenticate(pic_url, time);
-	window.alert(auth_token);
 	hsp.attachFileToMessage ({ 
 		url: pic_url, 
 		name: pic_name, 
@@ -37,6 +36,6 @@ function authenticate(pic_url, time) {
 
 		})
 	);
-	console.log(auth_token);
+	console.log("outside ajax: " + auth_token);
 	return auth_token;
 }
