@@ -29,7 +29,7 @@ function authenticate(pic_url, time) {
 			url: "getAuth",
 			type: "GET",
 			data: {},
-			dataType: "json",
+			dataType: "string",
 		}).always(function(resp) {
 			console.log(resp[0] + " end. ");
 			 window.alert(resp);
