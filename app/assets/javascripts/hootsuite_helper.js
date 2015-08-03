@@ -3,7 +3,7 @@ function attach(pic_url, pic_name, pic_extension) {
 
 	createToken(pic_url, time);
 	var auth_token = getToken();
-	window.alert(auth_token.toString);
+	window.alert(auth_token.stringify);
 	hsp.attachFileToMessage ({ 
 		url: pic_url, 
 		name: pic_name, 
