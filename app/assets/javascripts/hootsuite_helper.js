@@ -26,7 +26,6 @@ function authenticate(pic_url, time) {
 		dataType: "json",
 	}).always(function(resp) {
 			console.log(resp + " next " + resp[0] + " next " + resp[1] + " end");
-		})
-	);
+		});
 	return auth_token;
 }
