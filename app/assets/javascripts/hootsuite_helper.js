@@ -8,7 +8,7 @@ function attach(pic_url, pic_extension, pic_name) {
 		name: pic_name, 
 		extension: pic_extension, 
 		timestamp: time, 
-		token: '048c16bed04be84d7131664dffa5c23af60ceb78' //auth_token
+		token: auth_token
 	});
 
 }
@@ -32,6 +32,7 @@ function authenticate(pic_url, time) {
 			dataType: "string",
 		}).always(function(resp) {
 			console.log(resp + " ---- " + resp[0] + " ---- " + resp[1] + " end");
+			auth_token = resp[0];
 		})
 	);
 	return auth_token;
