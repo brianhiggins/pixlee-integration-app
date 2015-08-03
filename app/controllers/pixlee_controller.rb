@@ -5,13 +5,11 @@ class PixleeController < ApplicationController
   end
 
   def index
-  	if session[:user_id] == nil
-	  	session[:user_id] = params[:uid]
-  	end
+  	@user_id = params[:uid]
   end
 
   def createAuth
-  	@auth_token = (session[:user_id] + params[:timeStamp] + params[:url] + "pixlee")
+  	@auth_token = (@user_id + params[:timeStamp] + params[:url] + "pixlee")
   	@auth_token = Digest::SHA1.hexdigest(@auth_token)
   	p @auth_token
 
