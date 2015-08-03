@@ -1,4 +1,4 @@
-function attach(pic_url, pic_extension, pic_name) {
+function attach(pic_url, pic_name, pic_extension) {
 	var time = event.timeStamp;
 
 	createToken(pic_url, time);
