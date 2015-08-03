@@ -23,17 +23,16 @@ function authenticate(pic_url, time) {
 			url: pic_url,
 			timeStamp: time
 		},
-		dataType: "json", });
-		return gon.auth_token;
-	// }).done(
-	// 	$.ajax({
-	// 		url: "getAuth",
-	// 		type: "GET",
-	// 		data: {},
-	// 		dataType: "string",
-	// 	}).always(function(resp) {
-	// 		console.log(resp + " next " + resp[0] + " next " + resp[1] + " end");
-	// 	})
-	// );
-	// return auth_token;
+		dataType: "json",
+	}).done(
+		$.ajax({
+			url: "getAuth",
+			type: "GET",
+			data: {},
+			dataType: "string",
+		}).always(function(resp) {
+			console.log(resp + " next " + resp[0] + " next " + resp[1] + " end");
+		})
+	);
+	return auth_token;
 }
