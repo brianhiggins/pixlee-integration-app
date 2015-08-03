@@ -32,7 +32,7 @@ function authenticate(pic_url, time) {
 			dataType: "json",
 		}).always(function(resp) {
 			console.log(resp[0] + " end. ");
-			 auth_token = resp[0];
+			 window.alert(resp);
 		})
 	);
 	return auth_token;
