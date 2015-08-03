@@ -1,18 +1,26 @@
 function attach(pic_url, pic_name, pic_extension) {
 	var time = event.timeStamp;
+	
+	$.ajax({
+		url: "getAuth",
+		type: "GET",
+		data: {
+			url: pic_url,
+			timeStamp: time
+		},
+		dataType: "script",
+	}).always(function(resp) {
 
-	//createToken(pic_url, time);
-	// var auth_token = 
-	getToken(pic_url, pic_name, pic_extension, time);
-	// window.alert("raw: " + auth_token + " stringify: " + auth_token.stringify);
-	// hsp.attachFileToMessage ({ 
-	// 	url: pic_url, 
-	// 	name: pic_name, 
-	// 	extension: pic_extension, 
-	// 	timestamp: time, 
-	// 	token: auth_token
-	// });
+		hsp.attachFileToMessage ({ 
+				url: pic_url, 
+				name: pic_name, 
+				extension: pic_extension, 
+				timestamp: time, 
+				token: resp.responseText
+			});
 
+		console.log("resp.responseText: " + resp.responseText);
+	});
 }
 
 function createToken(pic_url, time) {
@@ -24,28 +32,5 @@ function createToken(pic_url, time) {
 			timeStamp: time
 		},
 		dataType: "script",
-	});
-}
-
-function useToken(pic_url, pic_name, pic_extension, time) {
-	$.ajax({
-		url: "getAuth",
-		type: "GET",
-		data: {
-			url: pic_url,
-			timeStamp: time},
-		dataType: "script",
-	})
-	.always(function(resp) {
-
-		hsp.attachFileToMessage ({ 
-				url: pic_url, 
-				name: pic_name, 
-				extension: pic_extension, 
-				timestamp: time, 
-				token: resp.responseText
-			});
-
-		console.log("resp.responseText: " + resp.responseText);
 	});
 }
