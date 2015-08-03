@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  post '/' => 'sessions#new'
-
   root 'pixlee#start'
+
+  post '/' => 'pixlee#index'
 
   get 'index' => 'pixlee#index'
 
