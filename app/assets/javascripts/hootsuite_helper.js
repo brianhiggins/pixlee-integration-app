@@ -23,16 +23,16 @@ function authenticate(pic_url, time) {
 			url: pic_url,
 			timeStamp: time
 		},
-		dataType: "json",
+		dataType: "script",
 	}).done(
 		$.ajax({
 			url: "getAuth",
 			type: "GET",
 			data: {},
-			dataType: "json"
+			dataType: "script",
 		}).always(function(resp) {
-			console.log(JSON.stringify(resp) + " ---- " + resp.responseText + " ---- " resp);
-			auth_token = resp;
+			console.log(JSON.stringify(resp) + " ---- " + resp.responseText() + " ---- " + resp.responseText + " ---- " + resp);
+			auth_token = resp.responseText();
 		})
 	);
 	return auth_token;
