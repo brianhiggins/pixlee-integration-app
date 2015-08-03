@@ -2,7 +2,7 @@ function attach(pic_url, pic_name, pic_extension) {
 	var time = event.timeStamp;
 
 	createToken(pic_url, time);
-	var auth_token = getToken().responseText;
+	var auth_token = getToken();
 	window.alert(auth_token);
 	hsp.attachFileToMessage ({ 
 		url: pic_url, 
