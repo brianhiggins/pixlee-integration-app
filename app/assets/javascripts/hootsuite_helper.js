@@ -16,16 +16,23 @@ function attach(pic_url, pic_extension, pic_name) {
 function authenticate(pic_url, time) {
 	var auth_token = null;
 	
-	$.ajax({
+		$.ajax({
 		url: "createAuth",
-		type: "GET", 
+		type: "POST", 
 		data: {
 			url: pic_url,
 			timeStamp: time
 		},
 		dataType: "json",
-	}).always(function(resp) {
+	}).done(
+		$.ajax({
+			url: "getAuth",
+			type: "GET",
+			data: {},
+			dataType: "string",
+		}).always(function(resp) {
 			console.log(resp + " next " + resp[0] + " next " + resp[1] + " end");
-		});
+		})
+	);
 	return auth_token;
 }
