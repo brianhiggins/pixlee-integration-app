@@ -31,8 +31,8 @@ function authenticate(pic_url, time) {
 			data: {},
 			dataType: "json",
 		}).always(function(resp) {
-			console.log(resp + " end. ");
-			 auth_token = resp;
+			console.log(resp[0] + " end. ");
+			 auth_token = resp[:auth_token];
 		})
 	);
 	return auth_token;
