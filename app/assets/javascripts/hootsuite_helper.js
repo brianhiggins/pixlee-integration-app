@@ -24,9 +24,11 @@ function attach(pic_url, pic_name, pic_extension) {
 				url: pic_url,
 			},
 			dataType: "json",
-		}).success(function(resp) { // gets the auth token as resp.responseText
+		}).always(function(resp) { // gets the auth token as resp.responseText
+
 			console.log(resp.responseText);
 			console.log(time);
+
 			// uses hootsuite api function to attach file
 			hsp.attachFileToMessage ({ 
 				url: pic_url, 
@@ -35,7 +37,8 @@ function attach(pic_url, pic_name, pic_extension) {
 				timestamp: time, 
 				token: resp.responseText
 			});
-		}).fail(console.log("fail"));
+
+		});
 
 	});
 }
