@@ -15,6 +15,7 @@ class PixleeController < ApplicationController
     p session[:user_id]
   	auth_token = session[:user_id] + params[:timeStamp] + params[:url] + "pixlee"
   	auth_token = Digest::SHA512.hexdigest(auth_token)
+    p auth_token
 
   	respond_to do |format|
   		format.json {render json: auth_token}
