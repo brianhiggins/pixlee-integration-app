@@ -5,6 +5,7 @@ class PixleeController < ApplicationController
 
   #essentially the dashboard that allows the clicking of buttons
   def index
+    p params
   	session[:user_id] = params[:uid]
     session[:timeStamp] = params[:timeStamp]
   end
