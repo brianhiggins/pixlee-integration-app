@@ -6,11 +6,12 @@ class PixleeController < ApplicationController
   #essentially the dashboard that allows the clicking of buttons
   def index
   	session[:data] = [params[:uid], params[:ts]]
+    p session[:data]
   end
 
   # creates the token for attaching a file and returns it to an ajax get request
   def getAuth
-    p session[:data][1]
+    p session[:data]
   	auth_token = session[:data][0] + session[:data][1] + params[:url] + "pixlee"
   	auth_token = Digest::SHA512.digest(auth_token)
 
