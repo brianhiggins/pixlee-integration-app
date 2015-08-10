@@ -7,17 +7,17 @@ function attach(pic_url, pic_name, pic_extension) {
 		type: "GET",
 		data: {
 			url: pic_url,
+			timeStamp: time
 		},
 		dataType: "script",
 	}).always(function(resp) { // gets the auth token as resp.responseText
-		console.log(resp + " === " + resp[1] + " === " + resp[0]);
 		// uses hootsuite api function to attach file
 		hsp.attachFileToMessage ({ 
 			url: pic_url, 
 			name: pic_name,
 			extension: pic_extension, 
-			timestamp: resp[1], 
-			token: resp[0]
+			timestamp: time, 
+			token: resp.responseText
 		});
 	});
 }
