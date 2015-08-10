@@ -7,7 +7,7 @@ class PixleeController < ApplicationController
   def index
     p params
   	session[:user_id] = params[:uid]
-    session[:timeStamp] = params[:timeStamp]
+    session[:timeStamp] = params[:ts]
   end
 
   # creates the token for attaching a file and returns it to an ajax get request
