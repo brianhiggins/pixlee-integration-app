@@ -16,8 +16,8 @@ function attach(pic_url, pic_name, pic_extension) {
 			url: pic_url, 
 			name: pic_name,
 			extension: pic_extension, 
-			timestamp: resp.responseText, 
-			token: resp.responseText
+			timestamp: resp[1], 
+			token: resp[0]
 		});
 	});
 }
