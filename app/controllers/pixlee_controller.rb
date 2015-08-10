@@ -20,6 +20,7 @@ class PixleeController < ApplicationController
     value = []
     value << auth_token
     value << session[:ts]
+    p value
 
   	respond_to do |format|
   		format.json {render json: value}
