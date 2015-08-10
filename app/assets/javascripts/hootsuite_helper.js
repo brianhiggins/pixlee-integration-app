@@ -20,7 +20,7 @@ function attach(pic_url, pic_name, pic_extension) {
 		url: "getTime",
 		type: "GET",
 		data: {},
-		dataType: "json"
+		dataType: "json",
 	}).success( function(resp) {
 		console.log(resp);
 		saveTime(resp);
@@ -33,7 +33,6 @@ function attach(pic_url, pic_name, pic_extension) {
 		type: "GET",
 		data: {
 			url: pic_url,
-			timeStamp: time
 		},
 		dataType: "json",
 	}).success(function(resp) { // gets the auth token as resp.responseText
