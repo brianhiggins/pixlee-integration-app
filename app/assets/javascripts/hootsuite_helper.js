@@ -7,6 +7,7 @@ function attach(pic_url, pic_name, pic_extension) {
 	};
 
 	function sendAttachRequest (auth_token) {
+		console.log(auth_token);
 		hsp.attachFileToMessage ({ 
 			url: pic_url, 
 			name: pic_name,
@@ -39,5 +40,5 @@ function attach(pic_url, pic_name, pic_extension) {
 		console.log(resp.responseText);
 		// uses hootsuite api function to attach file
 		sentAttachRequest(resp.responseText);
-	});
+	}).fail(console.log("fail"));
 }
