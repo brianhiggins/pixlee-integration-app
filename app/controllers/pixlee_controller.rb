@@ -1,5 +1,3 @@
-require 'digest/sha512'
-
 class PixleeController < ApplicationController
   #root
   def start
