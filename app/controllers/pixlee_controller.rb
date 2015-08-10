@@ -12,7 +12,7 @@ class PixleeController < ApplicationController
   def getAuth
     p session[:user_id]
   	auth_token = session[:user_id] + params[:timeStamp] + params[:url] + "pixlee"
-  	auth_token = Digest::SHA512.hexdigest(auth_token)
+  	auth_token = Digest::SHA512.digest(auth_token)
     p auth_token
 
   	respond_to do |format|
