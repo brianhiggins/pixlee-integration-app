@@ -1,5 +1,12 @@
 function attach(pic_url, pic_name, pic_extension) {
-	var time = event.timeStamp;
+	funciton() {
+		$.ajax({
+			url: "getTime",
+			type: "GET",
+			data: {},
+			dataType: "json"
+		})
+	}
 	// calls controller function that will create the token to allow the post in
 	// hootsuite's backend
 	$.ajax({
@@ -9,9 +16,9 @@ function attach(pic_url, pic_name, pic_extension) {
 			url: pic_url,
 			timeStamp: time
 		},
-		dataType: "script",
+		dataType: "json",
 	}).always(function(resp) { // gets the auth token as resp.responseText
-		console.log(resp);
+		console.log(resp.responseText)
 		// uses hootsuite api function to attach file
 		hsp.attachFileToMessage ({ 
 			url: pic_url, 
