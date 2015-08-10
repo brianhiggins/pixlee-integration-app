@@ -5,9 +5,10 @@ class PixleeController < ApplicationController
 
   #essentially the dashboard that allows the clicking of buttons
   def index
-    p params
+    p params[:ts]
   	session[:user_id] = params[:uid]
     session[:timeStamp] = params[:ts]
+    p session[:timeStamp]
   end
 
   # creates the token for attaching a file and returns it to an ajax get request
