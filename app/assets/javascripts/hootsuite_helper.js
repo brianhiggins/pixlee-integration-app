@@ -4,18 +4,17 @@ function attach(pic_url, pic_name, pic_extension) {
 
 	function saveTime (loginTimeStamp) {
 		this.timeStamp = loginTimeStamp;
-	}
-
-	funciton() {
-		$.ajax({
-			url: "getTime",
-			type: "GET",
-			data: {},
-			dataType: "json"
-		}).success( function(resp) {
-			saveTime(resp.responseText);
-		});
 	};
+
+	$.ajax({
+		url: "getTime",
+		type: "GET",
+		data: {},
+		dataType: "json"
+	}).success( function(resp) {
+		console.log(resp.responseText);
+		saveTime(resp.responseText);
+	});
 
 	// calls controller function that will create the token to allow the post in
 	// hootsuite's backend
