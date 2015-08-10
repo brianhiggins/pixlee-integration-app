@@ -16,7 +16,7 @@ class PixleeController < ApplicationController
   	auth_token = Digest::SHA512.digest(auth_token)
 
     value = [auth_token, timeStamp]
-
+    p value
   	respond_to do |format|
   		format.json {render json: value}
    	end
