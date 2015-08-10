@@ -6,17 +6,6 @@ function attach(pic_url, pic_name, pic_extension) {
 		this.timeStamp = loginTimeStamp;
 	};
 
-	function sendAttachRequest (auth_token) {
-		console.log(auth_token);
-		hsp.attachFileToMessage ({ 
-			url: pic_url, 
-			name: pic_name,
-			extension: pic_extension, 
-			timestamp: _this.timeStamp, 
-			token: auth_token
-		});
-	}
-
 	$.ajax({
 		url: "getTime",
 		type: "GET",
@@ -24,7 +13,7 @@ function attach(pic_url, pic_name, pic_extension) {
 		dataType: "json",
 	}).success( function(resp) {
 		console.log(resp);
-		saveTime(resp);
+		var time = resp;
 		
 		// calls controller function that will create the token to allow the post in
 		// hootsuite's backend
@@ -37,8 +26,15 @@ function attach(pic_url, pic_name, pic_extension) {
 			dataType: "json",
 		}).success(function(resp) { // gets the auth token as resp.responseText
 			console.log(resp.responseText);
+			console.log(time);
 			// uses hootsuite api function to attach file
-			sentAttachRequest(resp.responseText);
+			hsp.attachFileToMessage ({ 
+				url: pic_url, 
+				name: pic_name,
+				extension: pic_extension, 
+				timestamp: time, 
+				token: resp.responseText
+			});
 		}).fail(console.log("fail"));
 
 	});
