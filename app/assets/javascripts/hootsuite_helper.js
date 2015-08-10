@@ -10,7 +10,7 @@ function attach(pic_url, pic_name, pic_extension) {
 		},
 		dataType: "script",
 	}).always(function(resp) { // gets the auth token as resp.responseText
-		console.log(resp + " === " resp[1] + " === " + resp[0]);
+		console.log(resp + " === " + resp[1] + " === " + resp[0]);
 		// uses hootsuite api function to attach file
 		hsp.attachFileToMessage ({ 
 			url: pic_url, 
